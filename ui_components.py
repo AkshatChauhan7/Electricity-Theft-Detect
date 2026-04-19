@@ -88,7 +88,7 @@ def plot_load_chart(window_df: pd.DataFrame) -> alt.Chart:
 def plot_loss_chart(window_df: pd.DataFrame, alert_threshold_pct: float) -> alt.Chart:
     data = window_df.copy()
     data["timestamp"] = pd.to_datetime(data["timestamp"])
-    data["loss_pct_display"] = data["loss_pct"] * 100
+    data["loss_pct_display"] = data["loss_pct"]
 
     loss_line = (
         alt.Chart(data)
